@@ -12,6 +12,12 @@ after_bundle do
     CODE
   end
 
+  create_file "app/assets/stylesheets/application.scss" do
+    <<-CODE.strip_heredoc
+    @import "bootstrap";
+    CODE
+  end
+
   generate "devise:install"
   generate :devise, "User"
   generate "migration AddNameToUsers name:string"
